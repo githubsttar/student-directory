@@ -17,30 +17,22 @@ def input_students
   students
 end
 
-# student_count = 11
-# # first, we print the list of students
-# students = [
-# {name: "Dr. Hannibal Lector", cohort: :november},
-# {name: "Darth Vader", cohort: :november},
-# {name: "Nurse Ratched", cohort: :november},
-# {name: "Michael Corleone", cohort: :november},
-# {name: "Alex DeLarge", cohort: :november},
-# {name: "The wicked Witch of the West", cohort: :november},
-# {name: "Terminator", cohort: :november},
-# {name: "Freddy Krueger", cohort: :november},
-# {name: "The Joker", cohort: :november},
-# {name: "Joffrey Baratheon", cohort: :november},
-# {name: "Norman Bates", cohort: :november}
-# ]
 def print_header
 puts "The students of villains Academy"
 puts "-----------"
 end
+
 def print(students)
+  counter = 1
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+      name = student[:name][0]
+      if name == "s"
+      puts "#{counter}. #{student[:name]} (#{student[:cohort]} cohort)"
+      counter += 1
+    end
   end
 end
+
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
 end
