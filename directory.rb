@@ -25,8 +25,9 @@ end
 def print(students)
   counter = 1
   students.each do |student|
-      name = student[:name][0]
-      if name == "s"
+      name = student[:name]
+      twelve = 12
+      if name.length < 12
       puts "#{counter}. #{student[:name]} (#{student[:cohort]} cohort)"
       counter += 1
     end
