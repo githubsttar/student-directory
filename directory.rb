@@ -24,15 +24,21 @@ end
 
 def print(students)
   counter = 1
-  students.each do |student|
-      name = student[:name]
+  while counter < students.length do
+    students.each do |student|
       twelve = 12
-      if name.length < 12
-      puts "#{counter}. #{student[:name]} (#{student[:cohort]} cohort)"
-      counter += 1
+      name = student[:name]
+      if name.length < twelve
+        puts "#{counter}. #{student[:name]} (#{student[:cohort]} cohort)"
+        counter += 1
+      end
+
     end
+
   end
+
 end
+
 
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
