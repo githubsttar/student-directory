@@ -7,15 +7,17 @@ def input_students
   name = gets.chomp
   origin = gets.chomp
   height = gets.chomp
+  cohort = gets.chomp
   # while the name is not empty, repeat this code
   while !name.empty?do
     # add the student hash to the array
-    students << {name: name, cohort: :november, origin: origin, height: height}
+    students << {name: name, cohort: cohort, origin: origin, height: height}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
     origin = gets.chomp
     height = gets.chomp
+    cohort = gets.chomp
   end
   # return the array of students
   students
@@ -28,20 +30,27 @@ end
 
 def print(students)
   counter = 1
-  while counter < students.length do
     students.each do |student|
-      twelve = 12
-      name = student[:name]
-      if name.length < twelve
-        s = "#{counter}. #{student[:name]}, #{student[:origin]}, #{student[:height]}, (#{student[:cohort]} cohort)"
-        puts s.center(50)
-        counter += 1
+      my_name = student[:name]
+      my_origin = student[:origin]
+      my_height = student[:height]
+      my_cohort = student[:cohort]
+      new_hash = {}
+
+      if new_hash[my_cohort] == nil
+        #students.map { |x| new_hash[my_cohort] = x }
+        new_hash[my_cohort] = my_name, my_origin, my_height
+        p new_hash[my_cohort["june"]]
+      else new_hash[my_cohort].push(my_name, my_origin, my_height)
       end
-
+      # my_cohort = student[:cohort]
+      # if new_array[my_cohort] == nil
+      #   student.map { |x| new_hash[my_cohort] = x }
+      #   puts new_array
+      #   #puts "#{counter}. #{student[:name]}, #{student[:origin]}, #{student[:height]}, (#{student[:cohort]} cohort)".center(50)
+      #   counter += 1
+      # end
     end
-
-  end
-
 end
 
 
