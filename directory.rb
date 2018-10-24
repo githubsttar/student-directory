@@ -33,7 +33,8 @@ def print(students)
       twelve = 12
       name = student[:name]
       if name.length < twelve
-        puts "#{counter}. #{student[:name]}, #{student[:origin]}, #{student[:height]}, (#{student[:cohort]} cohort)"
+        s = "#{counter}. #{student[:name]}, #{student[:origin]}, #{student[:height]}, (#{student[:cohort]} cohort)"
+        puts s.center(50)
         counter += 1
       end
 
