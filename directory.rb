@@ -60,7 +60,42 @@ def print_footer(students)
   end
 end
 
-students = input_students
+def menu
+  puts "1. Input the students"
+  puts "2. Show the students"
+  puts "9. Exit" # 9 becasue we'll be adding more items
+end
+
+def interative_menu
+  @students = []
+  loop do
+    # 1. print the menu and ask the user what to do
+    puts "1. Input the students"
+    puts "2. show the students"
+    puts "9. Exit"
+    # 2. do what the user has asked
+    selection = gets.chomp
+    # 3. do what the user has asked
+    case selection
+    when "1"
+      # input the students
+    when "2"
+      # show the students
+    when "9"
+      exit # this will cause the program to terminate
+    else
+      puts "I don;t know what you meant, try again"
+    end
+  end
+end
+
+def show_students
+  print_header
+  @students
+  print_footer(students)
+end
+
+students = interative_menu
 print_header
 print(students)
 print_footer(students)
